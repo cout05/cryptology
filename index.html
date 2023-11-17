@@ -15,8 +15,10 @@
         text-align: center;
         font-family: "Courier New", Courier, monospace;
         background-color: #333;
+        height: 100vh;
         color: #f4f4f4;
         font-size: 1.4rem;
+        overflow: hidden;
       }
 
       h1 {
@@ -25,6 +27,7 @@
       }
 
       h2 {
+        font-size: 1.5rem;
         color: #3498db;
       }
 
@@ -53,13 +56,19 @@
 
       #decryptedText {
         color: #e74c3c;
-        font-size: 2rem;
+        font-size: 1.5rem;
         margin-top: 20px;
       }
 
       p {
         font-style: italic;
         color: #7f8c8d;
+      }
+
+      @media (max-width: 600px) {
+        #formula {
+          max-width: 100px;
+        }
       }
     </style>
   </head>
@@ -70,22 +79,12 @@
         <h2>Enter formula:</h2>
         <h3>
           Y =
-          <input
-            id="formula"
-            type="text"
-            placeholder="1x-2"
-            style="max-width: 200px"
-            ; />
+          <input id="formula" type="text" placeholder="1x-2" />
           mod 26
         </h3>
         <h2>Enter Encrypted text:</h2>
         <h3>
-          <input
-            id="text"
-            type="text"
-            placeholder="remove spaces..."
-            style="max-width: 400px"
-            ; />
+          <input id="text" type="text" placeholder="remove spaces..." />
         </h3>
         <button onclick="handleClick()" value="submit">decrypt</button>
         <p>decrypted text here:</p>
